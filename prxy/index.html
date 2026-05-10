@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    
+    <script src="/sail/baremux/index.js"></script>
+    <script src="/sail/scram/scramjet.all.js"></script>
+
+    <script>
+        navigator.serviceWorker.register("/sail/sw.js")
+    </script>
+</head>
+<body>
+    <div class="upper-toolbar">
+
+
+        <div class="tabs-bar-holder">
+        <!--
+            <div class="tab activeEl" data-tabid="">
+                <img src="/prxy/icons/web-icon.png" class="tab-favicon">
+                <span class="tab-text-title">Idk Website blah blah blah blah</span>
+                <span class="close-tab">✕</span>
+            </div>
+        -->
+
+        
+
+            <div class="center-er-add-tab-span">
+                <span class="add-tab">+</span>
+            </div>
+
+            </div>
+        
+        <div class="search-bar-holder">
+            <div class="left-input">
+                
+                <div class="navigation-icons">
+                   
+
+					<img src="icons/backwardsIcon.svg" alt="" class="navigate-backwards">
+
+                    
+
+					<img src="icons/forwardsIcon.svg" alt="" class="navigate-fowards">
+
+					<img src="icons/refresh.svg" alt="" class="reload-page">
+                </div>
+
+                
+            </div>
+            <input type="text" class="sj-input" placeholder="Search the web freely"> 
+
+            <div class="right-input">
+                <div class="action-icons">
+                    <!--DEVTOOLS-->
+                    <img src="icons/devtools-icon.svg" alt="" class="devtools-icon">
+
+    <!--Full Screen-->
+
+
+<img src="icons/fullscreen.svg" alt="" class="fullscreen-sj-frame-btn">
+
+                </div>
+            </div>
+        </div>
+
+        <hr id="loading-bar-hr"> 
+    </div>
+    <div class="frame-div">
+        <!--<iframe src="/start.html" frameborder="0" class="sj-frame" id="frame-1"></iframe>-->
+    </div>
+    <script src="/prxy/scripts/setup-sj.js"></script>
+    <script>
+        window.parent.postMessage({
+            bgFilter: "blur(10px) brightness(50%)"
+        })
+
+    </script>
+    <script src="/prxy/scripts/tabs.js"></script>
+    <script src="/prxy/scripts/"></script>
+</body>
+</html>

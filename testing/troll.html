@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game loader</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><!--Jquery-->
+
+</head>
+<body>
+ 
+    <div id="headerWrapper">
+        <header id="headeryay">
+
+            <div class="in-header">
+
+                <h1 onclick="window.location.href='devconsole.html'" title="Home" class="coolBijeet-edu headerText text-button fake-h1">Bijeet-EDU</h1>
+
+            </div>
+            
+
+            <div class="in-header">
+                <a href="settings.html" class="white-text headerText inline-block-element padding-between-text text-button fake-h1">Settings</a>
+                <h1 onclick="openInaboutBlank()" title="about:blank hides your screen from securly clasroom or similar" class="white-text headerText inline-block-element padding-between-text text-button fake-h1">about:blank</h1>
+            </div>                
+                
+            <script>
+                function openInaboutBlank() {
+                    let win = window.open("about:blank", "_blank");
+                    win.document.write(`
+                    <iframe id="frame" src="devconsole.html"></iframe>
+                    <style>
+                        html, body {
+                        padding: 0px;
+                        margin: 0px;
+                        }
+
+                        #frame {
+                        padding: 0px;
+                        margin: 0px;
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        }
+                    </style>
+                    `);
+                }
+            </script>
+            
+
+        </header>
+        <!--END HEADER-->
+    </div>
+     <!--END DIV-->
+     <div id="wrapperInGeneral">
+    <div id="frameWrapper" style="display: flex; justify-content: center;">
+        <iframe id="gameFrame" src="" allowfullscreen></iframe>
+    </div>
+
+    <div id="bottomBar">
+        <h1 style="color: rgb(189, 255, 254); margin: 0px;">2026 Bijeet-EDU — v1.3</h1>
+        <img src="https://i.postimg.cc/4yby8m77/image-removebg-preview-(1).png" id="fullscreen" onclick="fullscreen()" style="cursor: pointer;">
+        </div>
+
+</div>
+
+<img src="/images/Trollface.webp" id="trollface">
+    
+<style>
+
+#bottomBar img{
+    filter: invert(1);
+}
+
+#bottomBar {
+    background-color: rgb(0, 32, 148); 
+    height: 11vh; position: relative; 
+    gap: 20px; text-align: center; 
+    display: flex; align-items: center;
+     justify-content: center; 
+     border: 3px solid black;
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+}
+
+
+    #gameFrame {
+  width: 100vw; 
+  border: 0px;
+  height: 80vh;
+        
+    }
+
+    #fullscreen{
+        height: 3em;
+        width: 3em;
+        
+        position: absolute;
+        right: 0.5em;
+        
+        
+    }
+
+
+    #trollface {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            transition: opacity 0.4s ease;
+            display: none;
+        }
+    
+</style>
+
+<script>
+const game = localStorage.getItem("gms");
+const iframe = getElement("gameFrame");
+
+function getElement(id) {
+
+    return document.getElementById(id)
+}
+
+
+
+
+
+
+
+function fullscreen() {
+
+
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+            iframe.msRequestFullscreen();
+        } else {
+            alert("Fullscreen is not supported by this browser.");
+        }
+}
+
+getElement("gameFrame").src = game
+
+//APR 1st CODE
+
+let trollface = document.querySelector("#trollface")
+
+        function unTroll() {
+        
+        trollface.style.opacity = 0;
+        
+        }
+
+        function fullUntroll() {
+        setTimeout(()=>{
+            unTroll()
+        }, 800)
+
+        setTimeout(()=>{
+            trollface.style.display = 'none'
+        }, 1200)
+    }
+
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    console.log("User is on this tab");
+    fullUntroll()
+  }
+  
+});
+
+
+function roll() {
+    window.open("https://www.youtube.com/watch?v=2qBlE2-WL60")
+    trollface.style.display = 'inline'
+}
+
+
+    
+if (Math.random() > 0.9) {
+    roll();
+}
+
+    //END APR1 1st CODE
+    
+//images/Trollface.webp
+</script>
+
+</body>
+</html>
